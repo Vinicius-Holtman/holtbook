@@ -4,8 +4,7 @@ import { red } from "@mui/material/colors";
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
-
-
+import testingUnive from "../assets/testingUniver.jpg"
 
 export function Post() {
   return (
@@ -26,8 +25,10 @@ export function Post() {
       />
       <CardMedia
         component="img"
+        sx={{ objectFit: 'cover' }}
         height="200"
-        image="https://picsum.photos/200/300"
+        width="100%"
+        image={testingUnive}
         alt="Paella dish"
       />
       <CardContent>

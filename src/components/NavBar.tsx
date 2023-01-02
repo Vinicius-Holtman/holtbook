@@ -1,7 +1,8 @@
 import { DarkMode, LightMode, Mail, Notifications } from "@mui/icons-material";
-import { AppBar, Avatar, Badge, Box, IconButton, InputBase, Menu, MenuItem, styled, Toolbar, Typography, useTheme } from "@mui/material";
+import { AppBar, Avatar, Badge, Box, colors, IconButton, InputBase, Menu, MenuItem, styled, Toolbar, Typography, useTheme } from "@mui/material";
 import { useContext, useState } from "react";
 import { ColorModeContext, tokens } from "../theme";
+import HoltbookLogo from "../assets/holtbook.png"
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -9,8 +10,10 @@ const StyledToolbar = styled(Toolbar)({
 })
 
 const Search = styled("div")(({ theme }) => {
+  const colors = tokens(theme.palette.mode)
+
   return {
-    backgroundColor: "#005139",
+    backgroundColor: colors.grey[900],
     padding: "0 10px",
     borderRadius: theme.shape.borderRadius,
     width: "40%",
@@ -32,7 +35,10 @@ const UserBox = styled(Box)(({ theme }) => ({
   gap: "10px",
 }))
 
-
+const LogoHoltbook = styled("img")(({ theme }) => ({
+  width: 30,
+  height: 30
+}))
 
 export function NavBar() {
   const theme = useTheme()
@@ -40,14 +46,13 @@ export function NavBar() {
   const { toggleColorMode } = useContext(ColorModeContext)
   const [openMenu, setOpenMenu] = useState(false)
 
-  // console.log(`estou aquiiiiii!!!`,theme.palette.mode)
-
   return (
     <AppBar position="sticky" sx={{ mb: "10px", backgroundColor: colors.green[500] }}>
       <StyledToolbar>
         <Typography variant="h4" sx={{ display: { xs: "none", sm: "block" } }}>
           HOLTBOOK
         </Typography>
+        <LogoHoltbook src={HoltbookLogo} alt="Logo image holtbook" sx={{ display: { xs: "block", sm: "none" } }} />
         <Search>
           <InputBase placeholder="Search..." />
         </Search>

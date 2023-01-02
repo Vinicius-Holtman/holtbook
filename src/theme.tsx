@@ -1,8 +1,5 @@
-import { createContext, useState, useMemo, useContext } from "react";
-import { createTheme, ThemeProvider, useTheme } from "@mui/material/styles"
-import { Box, IconButton } from "@mui/material";
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { createContext, useState, useMemo } from "react";
+import { createTheme } from "@mui/material/styles"
 
 type TokenProps = "dark" | "light"
 
