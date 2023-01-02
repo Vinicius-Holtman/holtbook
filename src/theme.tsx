@@ -132,7 +132,7 @@ export const themeSettings = (mode: TokenProps) => {
       mode,
       ...(mode === "dark" ? {
         primary: {
-          main: colors.primary[500]
+          main: "#002884"
         },
         secondary: {
           main: colors.greenAccent[500]
@@ -147,7 +147,7 @@ export const themeSettings = (mode: TokenProps) => {
         }
       } : {
         primary: {
-          main: colors.primary[100]
+          main: "#757ce8"
         },
         secondary: {
           main: colors.greenAccent[500]
@@ -158,7 +158,7 @@ export const themeSettings = (mode: TokenProps) => {
           light: colors.grey[100]
         },
         background: {
-          default: "#fcfcfc"
+          default: colors.grey[900]
         }
       })
     },
