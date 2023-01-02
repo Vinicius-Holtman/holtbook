@@ -1,7 +1,7 @@
 import { Box, CssBaseline, Stack, ThemeProvider } from '@mui/material'
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import { Add } from './components/Add'
+import { AddPost } from './components/AddPost'
 import { Feed } from './components/Feed'
 import { NavBar } from './components/NavBar'
 import { RightBar } from './components/RightBar'
@@ -24,7 +24,7 @@ function App() {
                 <Feed />
                 <RightBar />
               </Stack>
-              <Add />
+              <AddPost />
             </Box>
           </main>
         </div>

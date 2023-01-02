@@ -4,10 +4,7 @@ import { tokens } from "../theme";
 
 
 
-export function Add() {
-  const theme = useTheme()
-  const colors = tokens()
-
+export function AddPost() {
   return (
     <>
       <Tooltip title="Delete" sx={{ position: "fixed", bottom: 20, left: {xs: "calc(50% - 25px)", md: 30}}}>
