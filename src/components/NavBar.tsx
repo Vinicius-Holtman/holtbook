@@ -1,6 +1,6 @@
 import { DarkMode, LightMode, Mail, Notifications } from "@mui/icons-material";
-import { AppBar, Avatar, Badge, Box, IconButton, InputBase, styled, Toolbar, Typography, useTheme } from "@mui/material";
-import { useContext } from "react";
+import { AppBar, Avatar, Badge, Box, IconButton, InputBase, Menu, MenuItem, styled, Toolbar, Typography, useTheme } from "@mui/material";
+import { useContext, useState } from "react";
 import { ColorModeContext, tokens } from "../theme";
 
 const StyledToolbar = styled(Toolbar)({
@@ -18,18 +18,18 @@ const Search = styled("div")(({ theme }) => {
 })
 
 const Icons = styled(Box)(({ theme }) => ({
-    display: "none",
-    alignItems: "center",
-    gap: "10px",
-    [theme.breakpoints.up("sm")]: {
-      display: "flex"
-    }
-  }))
+  display: "none",
+  alignItems: "center",
+  gap: "10px",
+  [theme.breakpoints.up("sm")]: {
+    display: "flex"
+  }
+}))
 
 const UserBox = styled(Box)(({ theme }) => ({
-    display: "flex",
-    alignItems: "center",
-    gap: "10px",
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",
 }))
 
 
@@ -38,6 +38,7 @@ export function NavBar() {
   const theme = useTheme()
   const colors = tokens(theme.palette.mode)
   const { toggleColorMode } = useContext(ColorModeContext)
+  const [openMenu, setOpenMenu] = useState(false)
 
   // console.log(`estou aquiiiiii!!!`,theme.palette.mode)
 
@@ -51,13 +52,13 @@ export function NavBar() {
           <InputBase placeholder="Search..." />
         </Search>
         <Box display="flex" gap="20px" alignItems="center">
-          
+
           <Icons>
             <IconButton onClick={toggleColorMode}>
               {theme.palette.mode === "dark" ? (
-                <DarkMode  sx={{ color: "#fff"}} />
-                ) : (
-                <LightMode sx={{ color: "#fff"}} />
+                <DarkMode sx={{ color: "#fff" }} />
+              ) : (
+                <LightMode sx={{ color: "#fff" }} />
               )}
             </IconButton>
             <Badge badgeContent={4} color="primary">
@@ -69,14 +70,37 @@ export function NavBar() {
             </Badge>
           </Icons>
 
-          <UserBox>
-            <Avatar src="https://github.com/Vinicius-Holtman.png" alt="profile-user-image" sx={{ width: 30, height: 30 }} />
-            <Typography sx={{ display: {[theme.breakpoints.up("sm")]: { display: "none" }}}}>Vinicius Holtman</Typography>
+          <UserBox onClick={() => setOpenMenu(true)}>
+            <Avatar
+              src="https://github.com/Vinicius-Holtman.png"
+              alt="profile-user-image"
+              sx={{ width: 30, height: 30 }}
+            />
+            <Typography sx={{ display: { [theme.breakpoints.up("sm")]: { display: "none" } } }}>Vinicius Holtman</Typography>
           </UserBox>
 
 
         </Box>
       </StyledToolbar>
+
+      <Menu
+        id="demo-positioned-menu"
+        aria-labelledby="demo-positioned-button"
+        open={openMenu}
+        onClose={() => setOpenMenu(false)}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+      >
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
+      </Menu>
     </AppBar>
   )
 }
