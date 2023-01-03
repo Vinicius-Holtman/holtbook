@@ -14,7 +14,7 @@ const Search = styled("div")(({ theme }) => {
 
 export function MarketplaceFilter() {
   return (
-    <Box flex={0.70} bgcolor="pink">
+    <Box flex={1.70} bgcolor="pink">
       <Box position="fixed">
         <Search>
           <InputBase placeholder="Search..." />

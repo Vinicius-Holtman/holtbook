@@ -15,6 +15,37 @@ export function Product() {
       <CardProduct />
       <CardProduct />
       <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct /> 
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct /> 
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
+      <CardProduct />
     </Box>
   )
 }
